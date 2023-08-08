@@ -13,10 +13,11 @@ const App = () => {
     const page = searchParams.get("page") ?? 1;
     if (location.pathname.includes("tags")) {
       const tag = location.pathname.split("/").at(-1).replaceAll("-", " ");
+      console.log(tag)
       fetchData(Number(page), tag);
     } else if (location.pathname.includes("categories")) {
-      const tag = location.pathname.split("/").at(-1).replaceAll("-", " ");
-      fetchData(Number(page), tag);
+      const category = location.pathname.split("/").at(-1).replaceAll("-", " ");
+      fetchData(Number(page),null,category);
     } else {
       fetchData(Number(page));
     }

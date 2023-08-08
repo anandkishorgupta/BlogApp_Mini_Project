@@ -5,7 +5,7 @@ const Pagination = () => {
 
   const { currentPage,
     totalPage,
-    fetchData
+    handlePageChange
   } = useContext(AppContext);
 
   return (
@@ -14,11 +14,11 @@ const Pagination = () => {
         <div className="flex gap-3">
           {
             currentPage > 1 &&
-            <button type="button" className="border border-gray-300 rounded-md py-1 px-3"  onClick={() => fetchData(currentPage - 1)}>Previous</button>
+            <button type="button" className="border border-gray-300 rounded-md py-1 px-3"  onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
           }
           {
             currentPage < totalPage &&
-            <button type="button" className="border border-gray-300 rounded-md py-1 px-3 "  onClick={() => fetchData(currentPage + 1)}>Next</button>
+            <button type="button" className="border border-gray-300 rounded-md py-1 px-3 "  onClick={() => handlePageChange(currentPage + 1)}>Next</button>
           }
 
         </div>
